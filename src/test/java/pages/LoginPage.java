@@ -1,6 +1,8 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -65,5 +67,17 @@ public class LoginPage {
         enterUsername(user);
         enterPassword(pass);
         clickLogin();
+    }
+
+    /**
+     * Handle Browser Alert
+     */
+    public void handleBrowserAlertIfPresent() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();  // Clicks OK
+        } catch (NoAlertPresentException ignored) {
+            // Alert not shown, safe to skip
+        }
     }
 }

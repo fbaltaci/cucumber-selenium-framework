@@ -11,7 +11,7 @@ public class Hooks {
      */
     @Before
     public void setup() {
-        DriverFactory.initDriver();
+        DriverFactory.initDriver("chrome");
     }
 
     /**

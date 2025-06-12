@@ -20,6 +20,7 @@ public class CheckoutSteps {
         driver.get("https://www.saucedemo.com/");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
+        loginPage.handleBrowserAlertIfPresent();
         inventoryPage = new InventoryPage(driver);
     }
 
