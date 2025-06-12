@@ -1,11 +1,14 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.LoginPage;
-import pages.InventoryPage;
-import utils.DriverFactory;
 import org.testng.Assert;
+import pages.InventoryPage;
+import pages.LoginPage;
+import utils.DriverFactory;
 
 public class LoginSteps {
 
@@ -34,5 +37,10 @@ public class LoginSteps {
     public void i_should_see_products_page() {
         inventoryPage = new InventoryPage(driver);
         Assert.assertEquals(inventoryPage.getPageTitle(), "Products");
+    }
+
+    @Then("I should see an error message {string}")
+    public void i_should_see_error_message(String expectedError) {
+        Assert.assertEquals(loginPage.getErrorMessage(), expectedError);
     }
 }
