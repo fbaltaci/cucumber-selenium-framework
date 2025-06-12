@@ -24,6 +24,7 @@ public class LoginPage {
      */
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        logger.debug("LoginPage initialized.");
     }
 
     /**
@@ -32,6 +33,7 @@ public class LoginPage {
      * @param user Username to enter
      */
     public void enterUsername(String user) {
+        logger.info("Entering username: {}", user);
         driver.findElement(username).sendKeys(user);
     }
 
@@ -41,6 +43,7 @@ public class LoginPage {
      * @param pass Password to enter
      */
     public void enterPassword(String pass) {
+        logger.info("Entering password: ********");
         driver.findElement(password).sendKeys(pass);
     }
 
@@ -48,6 +51,7 @@ public class LoginPage {
      * Clicks on the login button.
      */
     public void clickLogin() {
+        logger.info("Clicking login button.");
         driver.findElement(loginButton).click();
     }
 
@@ -57,7 +61,9 @@ public class LoginPage {
      * @return Error message as a string
      */
     public String getErrorMessage() {
-        return driver.findElement(errorMsg).getText();
+        String message = driver.findElement(errorMsg).getText();
+        logger.warn("Login error message displayed: {}", message);
+        return message;
     }
 
     /**
@@ -67,6 +73,7 @@ public class LoginPage {
      * @param pass Password
      */
     public void login(String user, String pass) {
+        logger.debug("Attempting login with username: {}", user);
         enterUsername(user);
         enterPassword(pass);
         clickLogin();
@@ -77,10 +84,12 @@ public class LoginPage {
      */
     public void handleBrowserAlertIfPresent() {
         try {
+            logger.debug("Checking for browser alert...");
             Alert alert = driver.switchTo().alert();
-            alert.accept();  // Clicks OK
+            logger.info("Browser alert found. Accepting it.");
+            alert.accept();
         } catch (NoAlertPresentException ignored) {
-            // Alert not shown, safe to skip
+            logger.debug("No browser alert present.");
         }
     }
 }
