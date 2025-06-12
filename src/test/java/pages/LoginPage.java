@@ -4,10 +4,13 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage {
 
     private final WebDriver driver;
+    private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
 
     private final By username = By.id("user-name");
     private final By password = By.id("password");
