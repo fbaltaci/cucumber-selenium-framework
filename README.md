@@ -1,6 +1,9 @@
-# Cucumber + Selenium Java UI Automation Framework
+~~# Cucumber + Selenium Java UI Automation Framework
 
-This is a simple yet scalable UI automation framework built using **Cucumber (BDD)**, **Selenium WebDriver**, and **TestNG** in **Java**. It follows best practices like Page Object Model (POM), browser parameterization, and reusable step definitions.
+This project tests the [SauceDemo](https://www.saucedemo.com/) website — a mock e-commerce platform for
+practicing UI test automation. The framework is built using **Cucumber (BDD)**, **Selenium WebDriver**,
+and **TestNG** in **Java**. It follows best practices like Page Object Model (POM), browser
+parameterization, and reusable step definitions.
 
 **Badges:**
 
@@ -131,4 +134,4 @@ LinkedIn: [https://www.linkedin.com/in/fehmi-baltaci](https://www.linkedin.com/i
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License.~~
