@@ -1,4 +1,4 @@
-~~# Cucumber + Selenium Java UI Automation Framework
+# Cucumber + Selenium Java UI Automation Framework
 
 This project tests the [SauceDemo](https://www.saucedemo.com/) website — a mock e-commerce platform for
 practicing UI test automation. The framework is built using **Cucumber (BDD)**, **Selenium WebDriver**,
@@ -134,4 +134,4 @@ LinkedIn: [https://www.linkedin.com/in/fehmi-baltaci](https://www.linkedin.com/i
 
 ## License
 
-This project is open-source and available under the MIT License.~~
+This project is open-source and available under the MIT License.
